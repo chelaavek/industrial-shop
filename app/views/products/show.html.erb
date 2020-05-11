@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <%= image_tag(@product.image_url, class: 'list_image') %>
+</p>
+
+<p>
+  <strong>Цена:</strong>
+  <%= @product.price %>
+</p>
+
+<%= link_to 'Назад', products_path %>

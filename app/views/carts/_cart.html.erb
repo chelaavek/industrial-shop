@@ -1,0 +1,16 @@
+<h2>Your Cart</h2>
+<table>
+  <%= render(cart.line_items) %>
+
+  <tr class="total_line">
+    <td colspan="2">В сумме</td>
+    <% if current_admin_user %>
+      <td class="total_cell"><%= number_to_currency(cart.total_price(current_admin_user.discount)) %></td>
+    <% else %>
+      <td class="total_cell"><%= number_to_currency(cart.total_price()) %></td>
+    <% end %>
+
+        </tr>
+</table>
+<li><%= button_to 'Оформить заказ', new_order_path, method: :get %></li>
+<li><%= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Вы уверены?'} %></li>

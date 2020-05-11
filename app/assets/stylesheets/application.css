@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.depot_form {
+    fieldset {
+        background: #B00100;
+        legend {
+            color: #dfd;
+            background: #B00100;
+            font-family: sans-serif;
+            padding: 0.2em 1em;
+        }
+    }
+    form {
+
+        select, textarea, input {
+            margin-left: 0.5em;
+        }
+        .submit {
+            margin-left: 4em;
+        }
+        br {
+            display: none
+        }
+    }
+}
+#banner{
+    background: white;
+    padding: 10px;
+    border-bottom: 2px solid;
+    font: small-caps 50px/100px "Brush Script Std", cursive;
+    color: #E73C3C;
+    text-align: left;
+}
+
+img{
+    float:right;
+    width: 25%;
+    margin-top: 30px;
+}
+
+#notice{
+    color: #000 !important;
+    border: 2px solid red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: white;
+    font: bold smaller sans-serif;
+}
+
+#columns {
+    background: #FFFFFF;
+
+    #main {
+        padding: 1em;
+        background: #1E2A33;
+    }
+
+    #side {
+        float: left;
+        padding: 1em 2em;
+        width: 13em;
+        background: #1E2A33;
+
+    form, div {
+        display: inline;
+    }
+
+    input {
+        font-size: small;
+    }
+
+    #cart {
+        font-size: smaller;
+        color: #ECF0F1;
+
+        table {
+            border-top: 1px dotted #595;
+            margin-bottom: 10px;
+        }
+
+    ul {
+        padding: 0;
+
+    li {
+        list-style: none;
+
+
+    a {
+        color: #ECF0F1;
+        font-size: small;
+    }
+
+    }
+    }
+    }
+
+}

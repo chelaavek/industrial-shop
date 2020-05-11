@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название акции:</strong>
+  <%= @promotion.title %>
+</p>
+
+<p>
+  <strong>Условия Акции:</strong>
+  <%= @promotion.promotion_terms %>
+</p>
+<%= link_to 'Назад', promotions_path %>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>У ШлакоБлокуня</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tag %>
+</head>
+
+  <body class='<%= controller.controller_name %>'>
+    <div id="banner">
+        <%= link_to(image_tag("logo.jpg"), "/") %>
+      <%= @page_title || "У ШлакоБлокуня" %>
+    </div>
+  <div id="columns">
+    <div id="side">
+      <% if @cart %>
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+              <%= render @cart %>
+          <% end %>
+      <% end %>
+
+        <ul>
+        <% if current_admin_user %>
+          <% if current_admin_user.role == 'admin' %>
+                  <li><%= button_to "Панель администратора", admin_admin_users_path, method: :get %></li>
+        <%end%>
+          <li><%= button_to "Выйти из аккаунта", destroy_admin_user_session_path, method: :get%> </li>
+              <li><%= button_to "Мои заказы", orders_path, method: :get%> </li>
+        <% else %>
+          <%= button_to "Войти в аккаунт", new_admin_user_session_path, method: :get  %>
+        <% end %>
+          <li><%= button_to "Домой", store_path, method: :get%> </li>
+          <li><%= button_to "Акции", promotions_path, method: :get%> </li>
+          <%= form_tag(products_path, method: :get) do %>
+              <%= text_field_tag(:search, params[:search]) %>
+              <%= submit_tag ('Поиск') %>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+    <div id="main">
+      <%= yield %>
+  </div>
+  </body>
+</html>
